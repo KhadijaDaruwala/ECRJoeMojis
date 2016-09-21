@@ -16,6 +16,13 @@
 		F2193E701D75668F00E0B592 /* EmojiKeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2193E6C1D75668F00E0B592 /* EmojiKeyboardView.xib */; };
 		F2193E711D75668F00E0B592 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F2193E6D1D75668F00E0B592 /* KeyboardView.xib */; };
 		F2193E721D75668F00E0B592 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2193E6E1D75668F00E0B592 /* Toast.swift */; };
+		F21C4FAD1D924FC600B62AFB /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21C4FAC1D924FC600B62AFB /* CoreMedia.framework */; };
+		F21C4FAF1D924FD200B62AFB /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21C4FAE1D924FD200B62AFB /* CoreMotion.framework */; };
+		F21C4FB11D924FDD00B62AFB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21C4FB01D924FDD00B62AFB /* AVFoundation.framework */; };
+		F21C4FB31D924FE600B62AFB /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21C4FB21D924FE600B62AFB /* OpenGLES.framework */; };
+		F21C4FB51D924FF000B62AFB /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F21C4FB41D924FF000B62AFB /* SystemConfiguration.framework */; };
+		F21C4FBD1D9250BD00B62AFB /* libTestFairy.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F21C4FBA1D9250BD00B62AFB /* libTestFairy.a */; };
+		F21C4FBE1D9250BD00B62AFB /* upload-dsym.sh in Resources */ = {isa = PBXBuildFile; fileRef = F21C4FBC1D9250BD00B62AFB /* upload-dsym.sh */; };
 		F25465EF1D756288001234DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F25465ED1D756288001234DA /* LaunchScreen.storyboard */; };
 		F25466011D7562B7001234DA /* ECRJoeMojis Keyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F25465FA1D7562B7001234DA /* ECRJoeMojis Keyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F2A11C591D76AC9A00859239 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25465FC1D7562B7001234DA /* KeyboardViewController.swift */; };
@@ -56,6 +63,15 @@
 		F2193E6C1D75668F00E0B592 /* EmojiKeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmojiKeyboardView.xib; sourceTree = "<group>"; };
 		F2193E6D1D75668F00E0B592 /* KeyboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
 		F2193E6E1D75668F00E0B592 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		F21C4FAC1D924FC600B62AFB /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F21C4FAE1D924FD200B62AFB /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		F21C4FB01D924FDD00B62AFB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F21C4FB21D924FE600B62AFB /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		F21C4FB41D924FF000B62AFB /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		F21C4FBA1D9250BD00B62AFB /* libTestFairy.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFairy.a; sourceTree = "<group>"; };
+		F21C4FBB1D9250BD00B62AFB /* TestFairy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFairy.h; sourceTree = "<group>"; };
+		F21C4FBC1D9250BD00B62AFB /* upload-dsym.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "upload-dsym.sh"; sourceTree = "<group>"; };
+		F21C4FBF1D92512100B62AFB /* ECRJoeMojis-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ECRJoeMojis-Bridging-Header.h"; sourceTree = "<group>"; };
 		F25465E11D756288001234DA /* ECRJoeMojis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ECRJoeMojis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F25465E41D756288001234DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F25465EE1D756288001234DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +86,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F21C4FB51D924FF000B62AFB /* SystemConfiguration.framework in Frameworks */,
+				F21C4FBD1D9250BD00B62AFB /* libTestFairy.a in Frameworks */,
+				F21C4FB31D924FE600B62AFB /* OpenGLES.framework in Frameworks */,
+				F21C4FB11D924FDD00B62AFB /* AVFoundation.framework in Frameworks */,
+				F21C4FAF1D924FD200B62AFB /* CoreMotion.framework in Frameworks */,
+				F21C4FAD1D924FC600B62AFB /* CoreMedia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,9 +105,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F21C4FB91D9250BD00B62AFB /* TestFairySDK-1.8.0 */ = {
+			isa = PBXGroup;
+			children = (
+				F21C4FBA1D9250BD00B62AFB /* libTestFairy.a */,
+				F21C4FBB1D9250BD00B62AFB /* TestFairy.h */,
+				F21C4FBC1D9250BD00B62AFB /* upload-dsym.sh */,
+			);
+			path = "TestFairySDK-1.8.0";
+			sourceTree = "<group>";
+		};
 		F25465D81D756288001234DA = {
 			isa = PBXGroup;
 			children = (
+				F21C4FB41D924FF000B62AFB /* SystemConfiguration.framework */,
+				F21C4FB21D924FE600B62AFB /* OpenGLES.framework */,
+				F21C4FB01D924FDD00B62AFB /* AVFoundation.framework */,
+				F21C4FAE1D924FD200B62AFB /* CoreMotion.framework */,
+				F21C4FAC1D924FC600B62AFB /* CoreMedia.framework */,
 				F25465E31D756288001234DA /* ECRJoeMojis */,
 				F25465FB1D7562B7001234DA /* ECRJoeMojis Keyboard */,
 				F25465E21D756288001234DA /* Products */,
@@ -104,6 +141,7 @@
 		F25465E31D756288001234DA /* ECRJoeMojis */ = {
 			isa = PBXGroup;
 			children = (
+				F21C4FB91D9250BD00B62AFB /* TestFairySDK-1.8.0 */,
 				F25465E41D756288001234DA /* AppDelegate.swift */,
 				F2193E611D75652200E0B592 /* Main.storyboard */,
 				F25465ED1D756288001234DA /* LaunchScreen.storyboard */,
@@ -111,6 +149,7 @@
 				F2193E651D7565A700E0B592 /* PageViewController.swift */,
 				F2193E661D7565A700E0B592 /* WalkthoughViewController.swift */,
 				F25465F01D756288001234DA /* Info.plist */,
+				F21C4FBF1D92512100B62AFB /* ECRJoeMojis-Bridging-Header.h */,
 			);
 			path = ECRJoeMojis;
 			sourceTree = "<group>";
@@ -214,6 +253,7 @@
 			files = (
 				F25465EF1D756288001234DA /* LaunchScreen.storyboard in Resources */,
 				F2193E641D75656200E0B592 /* Assets.xcassets in Resources */,
+				F21C4FBE1D9250BD00B62AFB /* upload-dsym.sh in Resources */,
 				F2193E621D75652200E0B592 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,14 +406,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: rahul mahadik (3FXBUPQE6P)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: rahul mahadik (3FXBUPQE6P)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ECRJoeMojis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ECRJoeMojis",
+					"$(PROJECT_DIR)/ECRJoeMojis/TestFairySDK-1.8.0",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.neosofttech.ECRJoeMojis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "399a7fee-4708-4a6f-a14a-1346c7cefed3";
+				SWIFT_OBJC_BRIDGING_HEADER = "ECRJoeMojis/ECRJoeMojis-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -381,14 +429,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: rahul mahadik (3FXBUPQE6P)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: rahul mahadik (3FXBUPQE6P)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = ECRJoeMojis/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ECRJoeMojis",
+					"$(PROJECT_DIR)/ECRJoeMojis/TestFairySDK-1.8.0",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.neosofttech.ECRJoeMojis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "399a7fee-4708-4a6f-a14a-1346c7cefed3";
+				SWIFT_OBJC_BRIDGING_HEADER = "ECRJoeMojis/ECRJoeMojis-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -403,6 +458,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "399a7fee-4708-4a6f-a14a-1346c7cefed3";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 			};
 			name = Debug;
 		};
@@ -417,6 +473,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "399a7fee-4708-4a6f-a14a-1346c7cefed3";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 			};
 			name = Release;
 		};
