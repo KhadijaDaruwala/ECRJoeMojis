@@ -1,0 +1,813 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <development version="7000" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardViewController" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+            <connections>
+                <outlet property="btnShift" destination="RQP-dT-sBO" id="d5H-Le-cM1"/>
+                <outlet property="btnShiftSpecial" destination="Qgy-Dc-IaU" id="exx-gr-SRt"/>
+                <outlet property="deleteKeyPressed" destination="iS1-Iw-DFc" id="8Zr-bn-UFk"/>
+                <outlet property="rowASDF" destination="VWH-73-yFt" id="TbC-ol-qIq"/>
+                <outlet property="rowChar1" destination="FCf-Qw-Gum" id="O1k-WU-aaS"/>
+                <outlet property="rowChar2" destination="d7u-eH-QeK" id="N8G-3r-Xbh"/>
+                <outlet property="rowNumber" destination="jG1-A3-Vno" id="4lk-mq-SjC"/>
+                <outlet property="rowQWERT" destination="nn6-J3-ORs" id="dto-yR-PZR"/>
+                <outlet property="rowSpecial1" destination="ksE-GP-tRW" id="BSj-Kt-dhF"/>
+                <outlet property="rowSpecial2" destination="63z-pt-dQN" id="K0Q-c8-Hoo"/>
+                <outlet property="rowZXC" destination="3Mq-20-Sq2" id="F6j-bL-UCa"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="KeyBoardView" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="WlA-va-AZz">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="220"/>
+                    <subviews>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ksE-GP-tRW" userLabel="Special1">
+                            <rect key="frame" x="0.0" y="-1" width="320" height="0.0"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="78l-jE-TYm" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="[">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="u1z-9p-6WA"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d32-gT-DGv" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="]">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="Vdv-nX-lwB"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XsJ-Jw-69l" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="64" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="{">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="vkR-ms-CGj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-Yy-at0" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="96" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="}">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="4rA-oV-p5i"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdt-0h-a2p" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="128" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="#">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="FyK-iw-Fzp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L2F-lf-aco" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="160" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="%">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="U0j-yZ-etr"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrl-XW-nVg" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="192" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="^">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="PVY-Z6-1XY"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9m-sg-FuL" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="224" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="*">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="HZf-KE-eI9"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="soj-tx-67t" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="256" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="+">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="myg-S0-qDf"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rS9-VR-Lse" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="288" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="=">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="JGf-hr-WM0"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="63z-pt-dQN" userLabel="Special2">
+                            <rect key="frame" x="0.0" y="-1" width="320" height="0.0"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AI1-6b-40J" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="_">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="oJs-Y3-wRb"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvV-gq-bPb" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="\">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="1Aw-VN-o7z"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpp-Cg-LRn" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="64" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="|">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="5ER-Pk-f3k"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rI7-n7-nbz" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="96" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="~">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="rn8-Gn-Z7w"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sSP-wY-ybZ" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="128" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="&lt;">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="oEh-xQ-ZO1"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="At3-lO-VAe" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="160" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="&gt;">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="j36-u7-Jq4"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iha-0t-gm9" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="192" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="€">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="Oo7-XR-mjV"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHU-Ri-wIm" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="224" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="£">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="rtO-KL-exM"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfx-Jw-7fY" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="256" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="¥">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="xC2-fG-24N"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oMc-p4-D86" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="288" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="•">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="8HF-NQ-NYG"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jG1-A3-Vno" userLabel="Number">
+                            <rect key="frame" x="0.0" y="-1" width="320" height="0.0"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXx-wa-kOQ" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="1">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="b3U-ga-32B"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZZ-Qc-HbY" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="2">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="tPr-9I-Mlj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cN2-Vc-gfa" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="64" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="3">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="JBT-qT-cDf"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Jb-vR-gTy" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="96" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="4">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="mi4-Z2-RQa"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeQ-O0-7oX" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="128" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="5">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="QIT-aX-aob"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OeC-6d-0Sd" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="160" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="6">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="UdS-RZ-bLr"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fb7-Yk-DXN" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="192" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="7">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="foU-0t-qTE"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLH-W6-2ht" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="224" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="8">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="uEs-xx-dL6"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddz-WE-4Hv" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="256" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="9">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="On1-rA-Pcq"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b5F-qY-9hh" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="288" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="0">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="9R6-tO-O68"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FCf-Qw-Gum" userLabel="Char1">
+                            <rect key="frame" x="0.0" y="-1" width="320" height="0.0"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOO-FE-AK2" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="-">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="lFB-QC-V4o"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofP-6F-0HV" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="/">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="Z9H-c6-LWh"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJE-f8-GLO" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="64" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title=":">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="iBr-tA-jLy"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vcW-GH-Jcm" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="96" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title=";">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="s2j-Ug-cJp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nmH-Gq-p96" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="128" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="(">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="F7K-NO-0rz"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcF-j9-zoa" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="160" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title=")">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="WAO-g4-cyj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2f-fa-udL" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="192" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="$">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="aMQ-ke-9NO"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZS-AD-2hd" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="224" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="&amp;">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="vdA-FU-ZZU"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y2U-p1-wVs" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="256" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="@">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="X6N-1H-F3r"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RS3-q7-yJL" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="288" y="0.0" width="32" height="0.0"/>
+                                    <state key="normal" title="&quot;">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="xX0-ty-ma4"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="d7u-eH-QeK" userLabel="Char2">
+                            <rect key="frame" x="0.0" y="-1" width="320" height="0.0"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qgy-Dc-IaU" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="46" height="0.0"/>
+                                    <connections>
+                                        <action selector="capseKeyPressed:" destination="-1" eventType="touchUpInside" id="4rb-lM-EZ0"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qln-RQ-AdO" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="46" y="0.0" width="45" height="0.0"/>
+                                    <state key="normal" title=".">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="2LO-Rf-CX8"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1q-3D-1X2" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="91" y="0.0" width="46" height="0.0"/>
+                                    <state key="normal" title=",">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="0W6-d0-iHd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LIc-uU-yUo" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="137" y="0.0" width="46" height="0.0"/>
+                                    <state key="normal" title="?">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="zaA-gb-RIF"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SUl-n2-CZf" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="183" y="0.0" width="46" height="0.0"/>
+                                    <state key="normal" title="!">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="XDI-ZW-JKd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hK1-Px-Tmf" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="229" y="0.0" width="45" height="0.0"/>
+                                    <state key="normal" title="'">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="Er8-nO-W4d"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WN-FN-fxA" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="274" y="0.0" width="46" height="0.0"/>
+                                    <state key="normal" image="Delete">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="deleteKeyPressed:" destination="-1" eventType="touchUpInside" id="vfu-Fy-bYm"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="nn6-J3-ORs" userLabel="qwert">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fhJ-F4-AMd" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="Q">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="pDv-7t-D7X"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dF3-Tt-1pB" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="32" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="W">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="PxF-9U-Pqp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rry-dN-193" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="64" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="E">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="W18-od-4FT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXI-a0-Ij5" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="96" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="R">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="SFK-OY-dw4"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GCa-0r-Oly" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="128" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="T">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="l6l-sx-b4j"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJt-bh-jSj" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="160" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="Y">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="4zF-tL-pLh"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWV-Av-Qwi" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="192" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="U">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="Ica-bf-2AD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mwX-ae-GUw" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="224" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="I">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="ZHp-8w-mD7"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTK-m5-gdv" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="256" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="O">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="VI9-wT-ZFp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psq-wU-UDZ" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="288" y="0.0" width="32" height="54"/>
+                                    <state key="normal" title="P">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="hgO-gB-0Be"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VWH-73-yFt" userLabel="asdf">
+                            <rect key="frame" x="0.0" y="55" width="320" height="55"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q2Z-Z0-iK4" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="55"/>
+                                    <state key="normal" title="A">
+                                        <color key="titleColor" red="0.1529411765" green="0.23137254900000001" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="kkd-rD-g6J"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDj-Fn-9bG" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="36" y="0.0" width="35" height="55"/>
+                                    <state key="normal" title="S">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="lD0-yI-52A"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aF-ug-jjP" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="71" y="0.0" width="36" height="55"/>
+                                    <state key="normal" title="D">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="RvE-Ve-UfQ"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Auz-IV-9fh" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="107" y="0.0" width="35" height="55"/>
+                                    <state key="normal" title="F">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="yTh-Gu-ntU"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkh-v9-mj8" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="142" y="0.0" width="36" height="55"/>
+                                    <state key="normal" title="G">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="mbg-Id-SoB"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBv-Gf-eVo" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="178" y="0.0" width="35" height="55"/>
+                                    <state key="normal" title="H">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="phN-gU-Xnj"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VYz-aG-ADJ" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="213" y="0.0" width="36" height="55"/>
+                                    <state key="normal" title="J">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="Jd6-h7-h2e"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXk-yg-jwT" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="249" y="0.0" width="35" height="55"/>
+                                    <state key="normal" title="K">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="mZQ-af-fGF"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXc-Pz-eaU" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="284" y="0.0" width="36" height="55"/>
+                                    <state key="normal" title="L">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="aRQ-HM-DKz"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3Mq-20-Sq2" userLabel="zxcv">
+                            <rect key="frame" x="0.0" y="111" width="320" height="54"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQP-dT-sBO" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="36" height="54"/>
+                                    <color key="tintColor" red="0.15294117647058825" green="0.23137254901960785" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                    <state key="normal" image="Caps Lock Off Filled"/>
+                                    <connections>
+                                        <action selector="capseKeyPressed:" destination="-1" eventType="touchUpInside" id="bOI-Xq-4s4"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fxq-JM-k7Q" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="36" y="0.0" width="35" height="54"/>
+                                    <state key="normal" title="Z">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="zOr-ke-G1S"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNq-rp-pQA" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="71" y="0.0" width="36" height="54"/>
+                                    <state key="normal" title="X">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="UO2-sq-Qt8"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hS-88-Rae" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="107" y="0.0" width="35" height="54"/>
+                                    <state key="normal" title="C">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="7lf-kH-WXp"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cB1-WL-gsT" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="142" y="0.0" width="36" height="54"/>
+                                    <state key="normal" title="V">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="1Wo-hG-fyt"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BD3-PB-aZM" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="178" y="0.0" width="35" height="54"/>
+                                    <state key="normal" title="B">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="vHd-jw-0x4"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSF-1t-SgA" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="213" y="0.0" width="36" height="54"/>
+                                    <state key="normal" title="N">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="W8N-5f-cDI"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHg-S7-HJg" customClass="emojiButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="249" y="0.0" width="35" height="54"/>
+                                    <state key="normal" title="M">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="DoU-QQ-nw9"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-Iw-DFc" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="284" y="0.0" width="36" height="54"/>
+                                    <state key="normal" image="Delete">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="deleteKeyPressed:" destination="-1" eventType="touchUpInside" id="3XL-So-ONd"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42f-fK-UBp">
+                            <rect key="frame" x="0.0" y="166" width="320" height="54"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qB9-2L-lKF" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="41" height="54"/>
+                                    <state key="normal" title="  123  ">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="numberKeyPressed:" destination="-1" eventType="touchUpInside" id="bPK-xm-0Oc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Poo-k1-FAn" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="41" y="0.0" width="35" height="54"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="35" id="hTZ-2n-BIx"/>
+                                    </constraints>
+                                    <state key="normal" image="nav_logo">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyChangeToEmojiKeyboardPressed:" destination="-1" eventType="touchUpInside" id="oTR-ze-B9W"/>
+                                    </connections>
+                                </button>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYX-lw-prC" userLabel="setting" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="76" y="0.0" width="0.0" height="54"/>
+                                    <state key="normal" title="S">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="keyPressed:" destination="-1" eventType="touchUpInside" id="7aH-IJ-wBF"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfb-qG-EPW" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="76" y="0.0" width="174" height="54"/>
+                                    <state key="normal" title="space">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="spaceKeyPressed:" destination="-1" eventType="touchUpInside" id="IsE-wo-Yov"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ISR-YD-EuT" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
+                                    <rect key="frame" x="250" y="0.0" width="70" height="54"/>
+                                    <state key="normal" title="    return   ">
+                                        <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="returnKeyPressed:" destination="-1" eventType="touchUpInside" id="p3N-Xf-hrD"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="WlA-va-AZz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WFf-te-rkq"/>
+                <constraint firstAttribute="bottom" secondItem="WlA-va-AZz" secondAttribute="bottom" id="czR-VQ-T9Y"/>
+                <constraint firstItem="WlA-va-AZz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="f0D-HB-XUB"/>
+                <constraint firstAttribute="trailing" secondItem="WlA-va-AZz" secondAttribute="trailing" id="j0V-km-il3"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Caps Lock Off Filled" width="20" height="20"/>
+        <image name="Delete" width="19" height="17"/>
+        <image name="nav_logo" width="26" height="26"/>
+    </resources>
+</document>
