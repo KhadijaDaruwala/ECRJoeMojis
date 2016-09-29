@@ -11,7 +11,7 @@ import UIKit
 import ImageIO
 
 class WalkthoughViewController: UIViewController {
-
+    
     @IBOutlet weak var pageHeaderTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageHeightContstraint: NSLayoutConstraint!
     @IBOutlet weak var pageHeaderHeightConstraint: NSLayoutConstraint!
@@ -26,6 +26,7 @@ class WalkthoughViewController: UIViewController {
     @IBOutlet weak var lblPageFooter: UILabel!
     @IBOutlet weak var pageCountController: UIPageControl!
     @IBOutlet weak var btnGetStarted: UIButton!
+    @IBOutlet weak var pageFooterHeightConstraint: NSLayoutConstraint!
     
     var index = 0,
     pageHeader =  "",
@@ -42,15 +43,30 @@ class WalkthoughViewController: UIViewController {
         lblPageFooter.text = pageFooter
         imgWalkthough.image = UIImage(named: pageImage)
         pageCountController.currentPage = index
-
-        if UIScreen.mainScreen().bounds.height <= 480 {
-            imageHeightContstraint.constant = 140
-            pageControlConstraint.constant = 15
-            getStartedHeightConstraint.constant = 40
-            pageDescriptionHeightConstraint.constant = 35
-            pageHeaderHeightConstraint.constant = 15
+        
+        if UIScreen.main.bounds.height <= 536 {
+//            if UIScreen.main.bounds.height <= 480 {
+//                imageHeightContstraint.constant = 50
+//                pageControlConstraint.constant = 10
+//                getStartedHeightConstraint.constant = 30
+//                pageDescriptionHeightConstraint.constant = 15
+//                pageHeaderHeightConstraint.constant = 35
+//                lblPageDescription.font = UIFont(name: "Helvetica Neue", size: 13)
+//                lblPageFooter.font = UIFont(name: "Helvetica Neue", size: 11)
+//            }
+//            else{
+                pageDescriptionHeightConstraint.constant = 60
+                imageHeightContstraint.constant = 140
+                pageControlConstraint.constant = 20
+                getStartedHeightConstraint.constant = 45
+                
+                pageHeaderHeightConstraint.constant = 15
+                pageFooterHeightConstraint.constant = 60
+                lblPageDescription.font = UIFont(name: "Helvetica Neue", size: 16)
+          //  }
+            
         }
-        if UIScreen.mainScreen().bounds.width >= 768 {
+        if UIScreen.main.bounds.width >= 768 {
             imageHeightContstraint.constant = 500
             pageControlConstraint.constant = 40
             getStartedHeightConstraint.constant = 60
@@ -58,19 +74,33 @@ class WalkthoughViewController: UIViewController {
             pageHeaderHeightConstraint.constant = 60
             pageHeaderTopConstraint.constant = 50
         }
-
+        
         //Show GetStarted button on last page
         if index == 4 {
             btnGetStarted.layer.cornerRadius = 5
-            btnGetStarted.hidden = false
+            btnGetStarted.isHidden = false
         } else {
-            btnGetStarted.hidden = true
+            btnGetStarted.isHidden = true
         }
     }
-    @IBAction func btnGetStarted(sender: AnyObject) {
-        if let settingsURL = NSURL(string: "prefs:root=General&path=Keyboard/KEYBOARDS") {
-            UIApplication.sharedApplication().openURL(settingsURL)
+    @IBAction func btnGetStarted(_ sender: AnyObject) {
+        
+        if #available(iOS 10.0, *) {
+            // use the feature only available in iOS 10.0
+            //  UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            showAlertDialog("To  enjoy the ECRJoeMojis keyboard, please go to the Settings application.", viewController: self)
+        } else {
+            if let settingsURL = URL(string: "prefs:root=General&path=Keyboard/KEYBOARDS") {
+                UIApplication.shared.openURL(settingsURL)
+            }
         }
+    }
+    
+    func showAlertDialog(_ strMsg: String, viewController: UIViewController){
+        let alert = UIAlertController(title: "ECRJoeMojis" , message: strMsg , preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        viewController.present(alert, animated: true , completion: nil)
     }
 }
 

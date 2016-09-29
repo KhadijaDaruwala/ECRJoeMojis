@@ -25,21 +25,21 @@ class PageViewController: UIPageViewController {
        self.dataSource = self
         
         if let walkthoughVC = self.viewControllerAtIndex(0)  {
-            setViewControllers([walkthoughVC], direction: .Forward, animated: true, completion: nil)
+            setViewControllers([walkthoughVC], direction: .forward, animated: true, completion: nil)
         }
 
         let backgroundImage = UIImageView(frame: CGRect(origin: view.bounds.origin, size: view.bounds.size))
         backgroundImage.image = UIImage(named: "background")
-        self.view.insertSubview(backgroundImage, atIndex: 0)
+        self.view.insertSubview(backgroundImage, at: 0)
     }
     
-    func viewControllerAtIndex(index: Int) -> WalkthoughViewController? {
+    func viewControllerAtIndex(_ index: Int) -> WalkthoughViewController? {
         
         if index == NSNotFound || index < 0 || index >= pageHeader.count {
             return nil
         }
         
-        if let walkthoughVC = storyboard?.instantiateViewControllerWithIdentifier("WalkthoughViewController") as? WalkthoughViewController {
+        if let walkthoughVC = storyboard?.instantiateViewController(withIdentifier: "WalkthoughViewController") as? WalkthoughViewController {
             
             walkthoughVC.pageHeader = pageHeader[index]
             walkthoughVC.pageDescription   = pageDescription[index]
@@ -55,13 +55,13 @@ class PageViewController: UIPageViewController {
 
 extension PageViewController : UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         
         let index = (viewController as! WalkthoughViewController).index + 1
         return self.viewControllerAtIndex(index)
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         let index = (viewController as! WalkthoughViewController).index - 1
         return self.viewControllerAtIndex(index)

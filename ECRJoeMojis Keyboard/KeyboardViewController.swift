@@ -8,7 +8,7 @@
 
 import UIKit
 
-let colorText = UIColor.whiteColor()
+let colorText = UIColor.white
 let colorButtonBackground = UIColor(red: 0.9451, green: 0.5529, blue: 0.2588, alpha: 1.0)
 let colorKeyboardBackground = UIColor(red: 0.9294, green: 0.2745, blue: 0.1412, alpha: 1.0)
 
@@ -18,18 +18,18 @@ class emojiButton: UIButton  {
     override func awakeFromNib() {
         
         self.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 20.0)
-        self.setTitleColor(colorText, forState: .Normal)
-        self.setTitleColor(UIColor.whiteColor(), forState: .Highlighted)
+        self.setTitleColor(colorText, for: UIControlState())
+        self.setTitleColor(UIColor.white, for: .highlighted)
         self.backgroundColor = colorButtonBackground
         
-        self.addTarget(self, action: #selector(self.holdDown(_:)), forControlEvents: .TouchDown)
-        self.addTarget(self, action: #selector(self.holdRelease(_:)), forControlEvents: .TouchUpInside)
+        self.addTarget(self, action: #selector(self.holdDown(_:)), for: .touchDown)
+        self.addTarget(self, action: #selector(self.holdRelease(_:)), for: .touchUpInside)
     }
-    func holdDown(button: UIButton) {
+    func holdDown(_ button: UIButton) {
         button.backgroundColor = colorKeyboardBackground
     }
     
-    func holdRelease(button: UIButton) {
+    func holdRelease(_ button: UIButton) {
         button.backgroundColor = colorButtonBackground
     }
 }
@@ -38,18 +38,18 @@ class sepcialButton: UIButton  {
     override func awakeFromNib() {
         
         self.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 18.0)
-        self.setTitleColor(colorText, forState: .Normal)
+        self.setTitleColor(colorText, for: UIControlState())
         
         self.backgroundColor = colorButtonBackground
-        self.addTarget(self, action: #selector(self.holdDown(_:)), forControlEvents: .TouchDown)
-        self.addTarget(self, action: #selector(self.holdRelease(_:)), forControlEvents: .TouchUpInside)
+        self.addTarget(self, action: #selector(self.holdDown(_:)), for: .touchDown)
+        self.addTarget(self, action: #selector(self.holdRelease(_:)), for: .touchUpInside)
     }
     
-    func holdDown(button: UIButton) {
+    func holdDown(_ button: UIButton) {
         button.backgroundColor = colorKeyboardBackground
     }
     
-    func holdRelease(button: UIButton) {
+    func holdRelease(_ button: UIButton) {
         button.backgroundColor = colorButtonBackground
     }
 }
@@ -103,19 +103,19 @@ class KeyboardViewController: UIInputViewController, ECRJEmojiKeyboardDelegate {
 //
 //        }
 //    }
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         let nib = UINib(nibName: "EmojiKeyboardView", bundle: nil)
-        let objects = nib.instantiateWithOwner(self, options: nil)
+        let objects = nib.instantiate(withOwner: self, options: nil)
         emojiKeyboardView = objects.first as! EmojiKeyboardView
         emojiKeyboardView.delegate = self
         view = emojiKeyboardView
     }
     
-    func setShift(value:Bool) {
-        btnShift?.selected = value
-        btnShift?.tintColor = value ? UIColor(red:0.15, green:0.23, blue:0.31, alpha:1.00) : UIColor.whiteColor()
+    func setShift(_ value:Bool) {
+        btnShift?.isSelected = value
+        btnShift?.tintColor = value ? UIColor(red:0.15, green:0.23, blue:0.31, alpha:1.00) : UIColor.white
         shifted = value
     }
     
@@ -124,81 +124,81 @@ class KeyboardViewController: UIInputViewController, ECRJEmojiKeyboardDelegate {
         // Dispose of any resources that can be recreated
     }
     
-    override func textWillChange(textInput: UITextInput?) {
+    override func textWillChange(_ textInput: UITextInput?) {
         // The app is about to change the document's contents. Perform any preparation here.
     }
     
-    override func textDidChange(textInput: UITextInput?) {
+    override func textDidChange(_ textInput: UITextInput?) {
         // The app has just changed the document's contents, the document context has been updated.
         
-        if !textDocument.hasText() {
+        if !textDocument.hasText {
             autoShifted = true
             //btnShift.setImage(UIImage(named: "Caps Lock Off Filled"), forState: .Normal)
             setShift(true)
         }
     }
-    @IBAction func keyPressed(button: UIButton) {
+    @IBAction func keyPressed(_ button: UIButton) {
         
-        UIDevice.currentDevice().playInputClick()
-        let title = button.titleForState(.Normal)
+        UIDevice.current.playInputClick()
+        let title = button.title(for: UIControlState())
         
         if shifted {
-            btnShift.setImage(UIImage(named: "Caps Lock On Filled"), forState: .Normal)
+            btnShift.setImage(UIImage(named: "Caps Lock On Filled"), for: UIControlState())
             
-            textDocument.insertText(title!.uppercaseString)
+            textDocument.insertText(title!.uppercased())
             
         } else {
-            btnShift.setImage(UIImage(named: "Caps Lock Off Filled"), forState: .Normal)
-            textDocument.insertText(title!.lowercaseString)
+            btnShift.setImage(UIImage(named: "Caps Lock Off Filled"), for: UIControlState())
+            textDocument.insertText(title!.lowercased())
         }
         
         if autoShifted {
             autoShifted = false
-            btnShift.setImage(UIImage(named: "Caps Lock On Filled"), forState: .Normal)
+            btnShift.setImage(UIImage(named: "Caps Lock On Filled"), for: UIControlState())
             setShift(autoShifted)
         }
     }
     
-    @IBAction func capseKeyPressed(button: UIButton) {
+    @IBAction func capseKeyPressed(_ button: UIButton) {
         
         if button.titleLabel?.text == "#+=" {
-            rowSpecial1.hidden = false
-            rowSpecial2.hidden = false
+            rowSpecial1.isHidden = false
+            rowSpecial2.isHidden = false
             
-            rowNumber.hidden = true
-            rowChar1.hidden = true
+            rowNumber.isHidden = true
+            rowChar1.isHidden = true
             
-            button.setTitle("123", forState: .Normal)
+            button.setTitle("123", for: UIControlState())
             
         } else if button.titleLabel?.text == "123" {
-            rowSpecial1.hidden = true
-            rowSpecial2.hidden = true
+            rowSpecial1.isHidden = true
+            rowSpecial2.isHidden = true
             
-            rowNumber.hidden = false
-            rowChar1.hidden = false
+            rowNumber.isHidden = false
+            rowChar1.isHidden = false
             
-            button.setTitle("#+=", forState: .Normal)
+            button.setTitle("#+=", for: UIControlState())
             
         }else {
-            rowSpecial1.hidden = true
-            rowSpecial2.hidden = true
+            rowSpecial1.isHidden = true
+            rowSpecial2.isHidden = true
             
             if shifted {
-                btnShift.setImage(UIImage(named: "Caps Lock Off Filled"), forState: .Normal)
+                btnShift.setImage(UIImage(named: "Caps Lock Off Filled"), for: UIControlState())
                 setShift(false)
                 
             } else {
-                btnShift.setImage(UIImage(named: "Caps Lock On Filled"), forState: .Normal)
+                btnShift.setImage(UIImage(named: "Caps Lock On Filled"), for: UIControlState())
                 setShift(true)
             }
         }
     }
     
-    @IBAction func deleteKeyPressed(button: UIButton) {
+    @IBAction func deleteKeyPressed(_ button: UIButton) {
         self.textDocumentProxy.deleteBackward()
     }
     
-    @IBAction func numberKeyPressed(button: UIButton) {
+    @IBAction func numberKeyPressed(_ button: UIButton) {
         
         if button.titleLabel?.text == "  123  " {
             
@@ -208,45 +208,45 @@ class KeyboardViewController: UIInputViewController, ECRJEmojiKeyboardDelegate {
             showRowNum(false)
             
             //Change Shift key to #+=
-            btnShiftSpecial.setTitle("#+=", forState: .Normal)
-            btnShiftSpecial.setImage(nil, forState: .Normal)
+            btnShiftSpecial.setTitle("#+=", for: UIControlState())
+            btnShiftSpecial.setImage(nil, for: UIControlState())
             
-            button.setTitle("  ABC  ", forState: .Normal)
+            button.setTitle("  ABC  ", for: UIControlState())
         } else if button.titleLabel?.text == "  ABC  " {
             
             button.titleLabel?.font = UIFont(name: "HelveticaNeue", size: 18.0)
             
-            rowSpecial1.hidden = true
-            rowSpecial2.hidden = true
+            rowSpecial1.isHidden = true
+            rowSpecial2.isHidden = true
             
             showRowQZA(false)
             showRowNum(true)
             
-            button.setTitle("  123  ", forState: .Normal)
+            button.setTitle("  123  ", for: UIControlState())
         }
     }
     
-    @IBAction func keyChangeToEmojiKeyboardPressed(sender: AnyObject) {
+    @IBAction func keyChangeToEmojiKeyboardPressed(_ sender: AnyObject) {
         view = emojiKeyboardView
     }
     
-    func showRowNum(value: Bool) {
-        rowNumber.hidden = value
-        rowChar1.hidden = value
-        rowChar2.hidden = value
+    func showRowNum(_ value: Bool) {
+        rowNumber.isHidden = value
+        rowChar1.isHidden = value
+        rowChar2.isHidden = value
     }
     
-    func showRowQZA(value: Bool) {
-        rowQWERT.hidden = value
-        rowZXC.hidden = value
-        rowASDF.hidden = value
+    func showRowQZA(_ value: Bool) {
+        rowQWERT.isHidden = value
+        rowZXC.isHidden = value
+        rowASDF.isHidden = value
     }
     
-    @IBAction func spaceKeyPressed(button: UIButton) {
+    @IBAction func spaceKeyPressed(_ button: UIButton) {
         self.textDocumentProxy.insertText(" ")
     }
     
-    @IBAction func returnKeyPressed(button: UIButton) {
+    @IBAction func returnKeyPressed(_ button: UIButton) {
         self.textDocumentProxy.insertText("\n")
     }
     
@@ -256,7 +256,7 @@ class KeyboardViewController: UIInputViewController, ECRJEmojiKeyboardDelegate {
     
     func btnAlphaNumericKeyboardPressed() {
         let nib = UINib(nibName: "KeyboardView", bundle: nil)
-        let objects = nib.instantiateWithOwner(self, options: nil)
+        let objects = nib.instantiate(withOwner: self, options: nil)
         keyboardView = objects.first as! UIView
         view = keyboardView
         view.backgroundColor = colorKeyboardBackground

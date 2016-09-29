@@ -16,7 +16,7 @@ class CustomCell: UICollectionViewCell {
         super.init(frame: frame)
         
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.size.width, height: frame.size.height))
-        imageView?.contentMode = .ScaleAspectFit
+        imageView?.contentMode = .scaleAspectFit
         
         self.addSubview(imageView!)
     }
@@ -33,9 +33,9 @@ protocol ECRJEmojiKeyboardDelegate {
 }
 
 enum ECRJEmojiKeyboardType {
-    case Emoji
-    case Gif
-    case Alphanumeric
+    case emoji
+    case gif
+    case alphanumeric
 }
 
 class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
@@ -49,7 +49,7 @@ class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     //Local Variables
     
     var dataEmoji = [UIImage]()
-    var currentKeyboard = ECRJEmojiKeyboardType.Emoji
+    var currentKeyboard = ECRJEmojiKeyboardType.emoji
     var delegate: ECRJEmojiKeyboardDelegate?
     var previouseSelectedButton:UIButton?
     
@@ -64,100 +64,100 @@ class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             }
         }
 
-        collectionView.registerClass(CustomCell.self, forCellWithReuseIdentifier: "CustomCell")
+        collectionView.register(CustomCell.self, forCellWithReuseIdentifier: "CustomCell")
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 8, bottom: 20, right: 8)
     }
     
     //Collection view delegate
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataEmoji.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CustomCell", forIndexPath: indexPath) as! CustomCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
-       cell.imageView?.image = dataEmoji[indexPath.item]
+       cell.imageView?.image = dataEmoji[(indexPath as NSIndexPath).item]
         
         return cell
     }
     
     //Verticale space
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout:UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         
         return 10.0
     }
     
     //Horizontal space
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat{
         
         return 5.0
     }
     
     //Cell size
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         
-        return CGSizeMake(45, 40)
+        return CGSize(width: 45, height: 40)
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath){
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
-        let pbWrapped: UIPasteboard? = UIPasteboard.generalPasteboard()
+        let pbWrapped: UIPasteboard? = UIPasteboard.general
         
         if let pb = pbWrapped {
-            if  currentKeyboard == ECRJEmojiKeyboardType.Emoji {
-                if let data = UIImagePNGRepresentation(dataEmoji[indexPath.row]) {
+            if  currentKeyboard == ECRJEmojiKeyboardType.emoji {
+                if let data = UIImagePNGRepresentation(dataEmoji[(indexPath as NSIndexPath).row]) {
                     pb.setData(data, forPasteboardType: "public.png")
                     
-                      self.makeToast(pasteMessage, duration: 3.0, position: .Center)
+                      self.makeToast(pasteMessage, duration: 3.0, position: .center)
                 }
             }
             
         } else {
             var style = ToastStyle()
-            style.messageColor = UIColor.redColor()
-            style.messageAlignment = .Center
+            style.messageColor = UIColor.red
+            style.messageAlignment = .center
             //style.backgroundColor = UIColor.whiteColor()
             
-            self.makeToast("To really enjoy the keyboard, please Allow Full Access in the settings application.", duration: 8.0, position: .Center, title: nil, image: UIImage(named: "toast.png"), style: style, completion: nil)
+            self.makeToast("To really enjoy the keyboard, please Allow Full Access in the settings application.", duration: 8.0, position: .center, title: nil, image: UIImage(named: "toast.png"), style: style, completion: nil)
         }
     }
     
-    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
-        if currentKeyboard == .Emoji {
-            cell.transform = CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5)
+        if currentKeyboard == .emoji {
+            cell.transform = CGAffineTransform.identity.scaledBy(x: 0.5, y: 0.5)
             
-            UIView.animateWithDuration(0.3, delay: 0.3, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.8, options: .CurveEaseOut, animations: {
+            UIView.animate(withDuration: 0.3, delay: 0.3, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.8, options: .curveEaseOut, animations: {
                 cell.transform =
-                    CGAffineTransformScale(CGAffineTransformIdentity, 1, 1)
+                    CGAffineTransform.identity.scaledBy(x: 1, y: 1)
                 
             }) { (_) in
       
             }
         }
     }
-    @IBAction func btnSharePressed(sender: AnyObject) {
+    @IBAction func btnSharePressed(_ sender: AnyObject) {
         delegate?.btnSharePressed()
     }
     
-    @IBAction func btnDeletePressed(sender: AnyObject) {
+    @IBAction func btnDeletePressed(_ sender: AnyObject) {
         delegate?.btnDeletePressed()
     }
-    @IBAction func btnAlphaNumericKeyboardPressed(sender: AnyObject) {
+    @IBAction func btnAlphaNumericKeyboardPressed(_ sender: AnyObject) {
         delegate?.btnAlphaNumericKeyboardPressed()
     }
     
-    @IBAction func btnNextKeyboardPressed(sender: AnyObject) {
+    @IBAction func btnNextKeyboardPressed(_ sender: AnyObject) {
         delegate?.btnNextKeyboardPressed()
     }
     
     func isOpenAccessGranted() -> Bool {
-        return UIPasteboard.generalPasteboard().isKindOfClass(UIPasteboard)
+        return UIPasteboard.general.isKind(of: UIPasteboard.self)
     }
 }
 
