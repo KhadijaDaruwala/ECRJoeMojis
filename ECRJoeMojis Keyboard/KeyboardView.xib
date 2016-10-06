@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -412,7 +411,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5WN-FN-fxA" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
-                                    <state key="normal" image="Delete">
+                                    <state key="normal" image="backspace-arrow">
                                         <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
@@ -584,7 +583,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="3Mq-20-Sq2" userLabel="zxcv">
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RQP-dT-sBO" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
-                                    <color key="tintColor" red="0.15294117647058825" green="0.23137254901960785" blue="0.30588235294117649" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" image="Caps Lock Off Filled"/>
                                     <connections>
                                         <action selector="capseKeyPressed:" destination="-1" eventType="touchUpInside" id="bOI-Xq-4s4"/>
@@ -647,7 +646,9 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iS1-Iw-DFc" customClass="sepcialButton" customModule="ECRJoeMojis_Keyboard" customModuleProvider="target">
-                                    <state key="normal" image="Delete">
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="backspace-arrow">
                                         <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
@@ -670,7 +671,7 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="35" id="hTZ-2n-BIx"/>
                                     </constraints>
-                                    <state key="normal" image="nav_logo">
+                                    <state key="normal" image="logo">
                                         <color key="titleColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </state>
                                     <connections>
@@ -717,7 +718,7 @@
     </objects>
     <resources>
         <image name="Caps Lock Off Filled" width="20" height="20"/>
-        <image name="Delete" width="19" height="17"/>
-        <image name="nav_logo" width="26" height="26"/>
+        <image name="backspace-arrow" width="16" height="17"/>
+        <image name="logo" width="17" height="17"/>
     </resources>
 </document>

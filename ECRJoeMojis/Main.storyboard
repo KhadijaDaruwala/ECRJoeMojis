@@ -31,8 +31,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xMO-L6-I4o">
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STEP 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gi3-cx-F8k">
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="3P2-xx-GeT">
@@ -48,7 +48,7 @@
                                                     <constraint firstAttribute="height" constant="70" id="P0b-Ba-uCD"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -64,12 +64,9 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="11" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NI6-AK-0Ti">
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="VTA-Ql-Ltv"/>
-                                                </constraints>
                                                 <string key="text">This step is required to copy and paste emojis and gif into your keyboard. The keyboard is not designed to store what you type or Transmit it to anyone</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="6E3-Z6-lie">
@@ -90,7 +87,7 @@
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                                 <state key="normal" title="GET STARTED">
-                                                                    <color key="titleColor" red="1" green="0.32407469403979261" blue="0.10248356466920483" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="btnGetStarted:" destination="khW-DO-PeA" eventType="touchUpInside" id="NKa-4h-t4I"/>
@@ -121,10 +118,11 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="0.89411764705882346" blue="0.058823529411764705" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sqE-iA-een" firstAttribute="leading" secondItem="ZT8-7P-XX3" secondAttribute="leadingMargin" id="377-ps-5rW"/>
-                            <constraint firstItem="sqE-iA-een" firstAttribute="top" secondItem="DkQ-fX-sz4" secondAttribute="bottom" constant="19" id="Oat-9s-JLZ"/>
-                            <constraint firstItem="sqE-iA-een" firstAttribute="centerY" secondItem="ZT8-7P-XX3" secondAttribute="centerY" id="SDE-0v-y9Y"/>
+                            <constraint firstItem="sqE-iA-een" firstAttribute="top" secondItem="DkQ-fX-sz4" secondAttribute="bottom" constant="50" id="Oat-9s-JLZ"/>
+                            <constraint firstItem="sqE-iA-een" firstAttribute="centerY" secondItem="ZT8-7P-XX3" secondAttribute="centerY" constant="31" id="SDE-0v-y9Y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sqE-iA-een" secondAttribute="trailing" id="Zrb-gD-CFj"/>
                             <constraint firstItem="sqE-iA-een" firstAttribute="centerX" secondItem="ZT8-7P-XX3" secondAttribute="centerX" id="oy4-FS-gvw"/>
                         </constraints>
@@ -141,7 +139,6 @@
                         <outlet property="pageControlConstraint" destination="P6f-tj-gyf" id="2M2-5r-3ff"/>
                         <outlet property="pageCountController" destination="6E3-Z6-lie" id="aav-Y1-WMu"/>
                         <outlet property="pageDescriptionHeightConstraint" destination="P0b-Ba-uCD" id="r7M-iE-a9Z"/>
-                        <outlet property="pageFooterHeightConstraint" destination="VTA-Ql-Ltv" id="1mn-Aw-Bpc"/>
                         <outlet property="pageHeaderHeightConstraint" destination="YIz-j4-90A" id="VyG-0k-Pxq"/>
                         <outlet property="pageHeaderTopConstraint" destination="Oat-9s-JLZ" id="4Sh-nx-Au5"/>
                     </connections>
@@ -152,6 +149,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="step_1" width="250" height="273"/>
+        <image name="step_1" width="199" height="231"/>
     </resources>
 </document>

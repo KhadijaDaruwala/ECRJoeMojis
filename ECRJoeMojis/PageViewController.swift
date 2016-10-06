@@ -13,7 +13,7 @@ class PageViewController: UIPageViewController {
     
     let  pageHeader = ["", "STEP 1", "STEP 2", "STEP 3", "STEP 4"]
     
-    let pageDescription = ["", "FROM SETTINGS > GENERAL > KEYBOARD > KEYBOARDS > ADD New Keyboard", "Add \"ECRJoeMojis\" From Third-Party Keyboards", "Select \"ECRJoeMojis\" Keyboard And Turn ON \"AllvarFull Access\"", "From iMessage Select The Globe Icon to Switch To The \"ECRJoeMojis\" Keyboard"]
+    let pageDescription = ["", "FROM SETTINGS > GENERAL > KEYBOARD > KEYBOARDS > ADD New Keyboard", "Add \"ECRMojis\" From Third-Party Keyboards", "Select \"ECRMojis\" Keyboard And Turn ON \"Allow Full Access\"", "From iMessage Select The Globe Icon to Switch To The \"ECRMojis\" Keyboard"]
 
     let pageImages = ["step_0", "step_1", "step_2", "step_3", "step_4"]
     
@@ -28,9 +28,9 @@ class PageViewController: UIPageViewController {
             setViewControllers([walkthoughVC], direction: .forward, animated: true, completion: nil)
         }
 
-        let backgroundImage = UIImageView(frame: CGRect(origin: view.bounds.origin, size: view.bounds.size))
-        backgroundImage.image = UIImage(named: "background")
-        self.view.insertSubview(backgroundImage, at: 0)
+//        let backgroundImage = UIImageView(frame: CGRect(origin: view.bounds.origin, size: view.bounds.size))
+//        backgroundImage.image = UIImage(named: "background")
+//        self.view.insertSubview(backgroundImage, at: 0)
     }
     
     func viewControllerAtIndex(_ index: Int) -> WalkthoughViewController? {

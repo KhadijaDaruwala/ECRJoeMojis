@@ -39,12 +39,12 @@ enum ECRJEmojiKeyboardType {
 }
 
 class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
-
+    
     //Outlets
     
     @IBOutlet weak var collectionView: UICollectionView!
-   // @IBOutlet weak var btnEmoji: UIButton!
-   // @IBOutlet weak var lblSelectedKeyboardType: UILabel!
+    // @IBOutlet weak var btnEmoji: UIButton!
+    // @IBOutlet weak var lblSelectedKeyboardType: UILabel!
     
     //Local Variables
     
@@ -57,13 +57,13 @@ class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         
         collectionView.delegate = self
         collectionView.dataSource = self
-       
-        for index in 1...25 {
+        
+        for index in 1...32 {
             if let img = UIImage(named: "emoji-\(index)") {
                 dataEmoji.append(img)
             }
         }
-
+        
         collectionView.register(CustomCell.self, forCellWithReuseIdentifier: "CustomCell")
         collectionView.contentInset = UIEdgeInsets(top: 20, left: 8, bottom: 20, right: 8)
     }
@@ -81,7 +81,7 @@ class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
         
-       cell.imageView?.image = dataEmoji[(indexPath as NSIndexPath).item]
+        cell.imageView?.image = dataEmoji[(indexPath as NSIndexPath).item]
         
         return cell
     }
@@ -108,16 +108,20 @@ class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataS
         
         let pbWrapped: UIPasteboard? = UIPasteboard.general
         
-        if let pb = pbWrapped {
+        if (isOpenAccessGranted())
+        {if let pb = pbWrapped {
+            print("ACCESS : ON")
             if  currentKeyboard == ECRJEmojiKeyboardType.emoji {
                 if let data = UIImagePNGRepresentation(dataEmoji[(indexPath as NSIndexPath).row]) {
                     pb.setData(data, forPasteboardType: "public.png")
                     
-                      self.makeToast(pasteMessage, duration: 3.0, position: .center)
+                    self.makeToast(pasteMessage, duration: 3.0, position: .center)
                 }
             }
-            
-        } else {
+            }
+        }
+        else{
+            print("ACCESS : OFF")
             var style = ToastStyle()
             style.messageColor = UIColor.red
             style.messageAlignment = .center
@@ -125,7 +129,9 @@ class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataS
             
             self.makeToast("To really enjoy the keyboard, please Allow Full Access in the settings application.", duration: 8.0, position: .center, title: nil, image: UIImage(named: "toast.png"), style: style, completion: nil)
         }
+        
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         
@@ -137,7 +143,7 @@ class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataS
                     CGAffineTransform.identity.scaledBy(x: 1, y: 1)
                 
             }) { (_) in
-      
+                
             }
         }
     }
@@ -157,7 +163,31 @@ class EmojiKeyboardView: UIView, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func isOpenAccessGranted() -> Bool {
-        return UIPasteboard.general.isKind(of: UIPasteboard.self)
+        //      return UIPasteboard.general.isKind(of: UIPasteboard.self)
+        if #available(iOSApplicationExtension 10.0, *) {
+            UIPasteboard.general.string = "TEST"
+            
+            if UIPasteboard.general.hasStrings {
+                // Enable string-related control...
+                UIPasteboard.general.string = ""
+                return  true
+            }
+            else
+            {
+                UIPasteboard.general.string = ""
+                return  false
+            }
+        } else {
+            // Fallback on earlier versions
+            if UIPasteboard.general.isKind(of: UIPasteboard.self) {
+                return true
+            }else
+            {
+                return false
+            }
+            
+        }
+        
     }
 }
 

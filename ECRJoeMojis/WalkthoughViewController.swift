@@ -88,7 +88,7 @@ class WalkthoughViewController: UIViewController {
         if #available(iOS 10.0, *) {
             // use the feature only available in iOS 10.0
             //  UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            showAlertDialog("To  enjoy the ECRJoeMojis keyboard, please go to the Settings application.", viewController: self)
+            showAlertDialog("To  enjoy the ECRMojis keyboard, please go to the Settings application.", viewController: self)
         } else {
             if let settingsURL = URL(string: "prefs:root=General&path=Keyboard/KEYBOARDS") {
                 UIApplication.shared.openURL(settingsURL)
@@ -97,7 +97,7 @@ class WalkthoughViewController: UIViewController {
     }
     
     func showAlertDialog(_ strMsg: String, viewController: UIViewController){
-        let alert = UIAlertController(title: "ECRJoeMojis" , message: strMsg , preferredStyle: .alert)
+        let alert = UIAlertController(title: "ECRMojis" , message: strMsg , preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
         alert.addAction(okAction)
         viewController.present(alert, animated: true , completion: nil)

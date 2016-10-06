@@ -8,9 +8,11 @@
 
 import UIKit
 
-let colorText = UIColor.white
-let colorButtonBackground = UIColor(red: 0.9451, green: 0.5529, blue: 0.2588, alpha: 1.0)
-let colorKeyboardBackground = UIColor(red: 0.9294, green: 0.2745, blue: 0.1412, alpha: 1.0)
+let colorText = UIColor.black
+//let colorButtonBackground = UIColor(red: 0.9451, green: 0.5529, blue: 0.2588, alpha: 1.0)
+let colorButtonBackground = UIColor(red: 1, green: 0.8941, blue: 0.058, alpha: 1.0)
+//let colorKeyboardBackground = UIColor(red: 0.9294, green: 0.2745, blue: 0.1412, alpha: 1.0)
+let colorKeyboardBackground = UIColor(red: 1, green: 0.8235, blue: 0.058, alpha: 1.0)
 
 let pasteMessage = "Now paste the image into the text field by tapping inside  and then selecting \"Paste\""
 
@@ -267,7 +269,7 @@ class KeyboardViewController: UIInputViewController, ECRJEmojiKeyboardDelegate {
     }
     
     func btnSharePressed() {
-        self.textDocumentProxy.insertText("Check out this cool new ECRJoeMojis app! It has emojis for the Moses Mabhida Stadium, the Drakensberg mountain range, sharks and Mandela - bit.ly/ECRJoeMojis")
+        self.textDocumentProxy.insertText("Check out this cool new ECRMojis app! It has emojis for the Moses Mabhida Stadium, the Drakensberg mountain range, sharks and Mandela - bit.ly/ECRMojis")
     }
     
 }
