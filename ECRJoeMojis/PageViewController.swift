@@ -13,11 +13,11 @@ class PageViewController: UIPageViewController {
     
     let  pageHeader = ["", "STEP 1", "STEP 2", "STEP 3", "STEP 4"]
     
-    let pageDescription = ["", "FROM SETTINGS > GENERAL > KEYBOARD > KEYBOARDS > ADD New Keyboard", "Add \"ECRMojis\" From Third-Party Keyboards", "Select \"ECRMojis\" Keyboard And Turn ON \"Allow Full Access\"", "From iMessage Select The Globe Icon to Switch To The \"ECRMojis\" Keyboard"]
+    let pageDescription = ["", "From Settings > General > Keyboard > Keyboards > Add New Keyboard", "Add \"ECRMojis\" from THIRD-PARTY KEYBOARDS", "Select \"ECRMojis\" keyboard and turn ON \"Allow Full Access\"", "From iMessage select the globe icon to switch to the \"ECRMojis\" keyboard"]
 
     let pageImages = ["step_0", "step_1", "step_2", "step_3", "step_4"]
     
-    let pageFooter = ["", "", "", "The Step Is Required To Copy And Paste EMOJI Into Your Keyboard. The Keyboard is Not Designed To Store What You Type Or Transmit It To Anyone.", ""]
+    let pageFooter = ["", "", "", "The step is required to copy and paste emoji into your keyboard. The keyboard is not designed to store what you type or transmit it to anyone.", ""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
