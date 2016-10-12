@@ -347,7 +347,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "f76b3904-74c5-4ff7-94b1-9ebab3d4a2a6";
+				PROVISIONING_PROFILE = "fc6ba19b-eae7-44a6-9b0d-3331da51e8d1";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,7 +389,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "f76b3904-74c5-4ff7-94b1-9ebab3d4a2a6";
+				PROVISIONING_PROFILE = "fc6ba19b-eae7-44a6-9b0d-3331da51e8d1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -414,7 +414,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.neosofttech.ECRJoeMojis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f76b3904-74c5-4ff7-94b1-9ebab3d4a2a6";
+				PROVISIONING_PROFILE = "fc6ba19b-eae7-44a6-9b0d-3331da51e8d1";
 				PROVISIONING_PROFILE_SPECIFIER = Wildcard_AdHoc_Profile;
 				SWIFT_OBJC_BRIDGING_HEADER = "ECRJoeMojis/ECRJoeMojis-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -440,7 +440,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.neosofttech.ECRJoeMojis;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f76b3904-74c5-4ff7-94b1-9ebab3d4a2a6";
+				PROVISIONING_PROFILE = "fc6ba19b-eae7-44a6-9b0d-3331da51e8d1";
 				PROVISIONING_PROFILE_SPECIFIER = Wildcard_AdHoc_Profile;
 				SWIFT_OBJC_BRIDGING_HEADER = "ECRJoeMojis/ECRJoeMojis-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
@@ -457,7 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.neosofttech.ECRJoeMojis.ECRJoeMojis-Keyboard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f76b3904-74c5-4ff7-94b1-9ebab3d4a2a6";
+				PROVISIONING_PROFILE = "fc6ba19b-eae7-44a6-9b0d-3331da51e8d1";
 				PROVISIONING_PROFILE_SPECIFIER = Wildcard_AdHoc_Profile;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
@@ -475,7 +475,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.neosofttech.ECRJoeMojis.ECRJoeMojis-Keyboard";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f76b3904-74c5-4ff7-94b1-9ebab3d4a2a6";
+				PROVISIONING_PROFILE = "fc6ba19b-eae7-44a6-9b0d-3331da51e8d1";
 				PROVISIONING_PROFILE_SPECIFIER = Wildcard_AdHoc_Profile;
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
